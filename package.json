@@ -2,13 +2,16 @@
   "name": "node-md2html",
   "version": "0.0.1",
   "description": "A markdown parser written in JavaScript, following Github's syntax",
-  "main": "md2html.js",
+  "main": "src/md2html.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node script/build"
   },
   "author": "Thomas Alrek <thomas@alrek.no>",
   "license": "GPL-2.0",
   "dependencies": {
-    "github-markdown-css": "^2.4.0"
+    "github-markdown-css": "^2.4.0",
+    "browserify": "^13.0.1",
+    "uglify-js": "^2.6.2"
   }
 }
