@@ -1,0 +1,30 @@
+<html>
+<body>
+    <link rel=""
+<hr>
+<input type="file" id="source">
+<div id="content">
+<br>Please select a file to parse
+</div>
+<script src="md2html.js"></script>
+<script>
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+        document.getElementById('source').addEventListener('change', function(){
+            var output = document.getElementById("content");
+            var reader = new FileReader();
+            var file = this.files[0];
+            reader.onload = function(event) {
+                var contents = event.target.result;
+                output.innerHTML = md2html(contents);
+            };
+            reader.onerror = function(event) {
+                document.write("File could not be read! Code " + event.target.error.code);
+            };
+            reader.readAsText(file);
+        }, false);
+    } else {
+        document.write('The File APIs are not fully supported in this browser.');
+    }
+</script>
+</body>
+</html>

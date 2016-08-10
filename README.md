@@ -1,6 +1,11 @@
-<html>
-<body>
-<pre id="source">
+md2html
+=======
+
+A simple and minimal markdown parser written in JavaScript.
+
+Test data below.
+
+
 # H1
 ## H2
 ### H3
@@ -45,14 +50,16 @@ Some text to show that the reference links can follow later.
 [arbitrary case-insensitive reference text]: https://www.mozilla.org
 [1]: http://slashdot.org
 [link text itself]: http://www.reddit.com
-</pre>
-<hr>
-<div id="content"></div>
-<script src="md2html.js"></script>
-<script>
-    var input = document.getElementById("source");
-    var output = document.getElementById("content");
-    output.innerHTML = md2html(input.innerHTML);
-</script>
-</body>
-</html>
+
+And here's some code! :+1:
+
+```javascript
+$(function(){
+    $('div').html('I am a div.');
+});
+```
+
+**Lists**
+* item 1
+* item 2
+* item 3
