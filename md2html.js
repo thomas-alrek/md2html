@@ -73,12 +73,7 @@ function md2html(md){
     md = md.replace(striketrough_pattern, function(match, str){
         return '<del>' + str + '</del>';
     });
-    
-    /* newline */
-    md = md.replace(newline_pattern, function(match, str){
-        return '<br>';
-    });
-    
+        
     /* source */
     md = md.replace(source_pattern1, function(match, lang, src){
         return '<pre title="' + lang + '">' + src + '</pre>';
@@ -91,6 +86,11 @@ function md2html(md){
     /* lists */
     md = md.replace(ul_pattern, function(match, str){
         return '<li>' + str + '</li>';
+    });
+
+    /* newline */
+    md = md.replace(newline_pattern, function(match, str){
+        return '<br>';
     });
 
     return md;
