@@ -1,0 +1,97 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@3.3.6
+3 info using node@v5.0.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'C:\\Users\\Thomas Alrek\\Desktop\\md_tmp',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\Thomas Alrek\AppData\Roaming\npm-cache\node-md2html\0.0.1\package.tgz not in flight; packing
+9 info lifecycle node-md2html@0.0.1~prepublish: node-md2html@0.0.1
+10 silly lifecycle node-md2html@0.0.1~prepublish: no script for prepublish, continuing
+11 verbose tar pack [ 'C:\\Users\\Thomas Alrek\\AppData\\Roaming\\npm-cache\\node-md2html\\0.0.1\\package.tgz',
+11 verbose tar pack   'C:\\Users\\Thomas Alrek\\Desktop\\md_tmp' ]
+12 verbose tarball C:\Users\Thomas Alrek\AppData\Roaming\npm-cache\node-md2html\0.0.1\package.tgz
+13 verbose folder C:\Users\Thomas Alrek\Desktop\md_tmp
+14 verbose addLocalTarball adding from inside cache C:\Users\Thomas Alrek\AppData\Roaming\npm-cache\node-md2html\0.0.1\package.tgz
+15 silly cache afterAdd node-md2html@0.0.1
+16 verbose afterAdd C:\Users\Thomas Alrek\AppData\Roaming\npm-cache\node-md2html\0.0.1\package\package.json not in flight; writing
+17 verbose afterAdd C:\Users\Thomas Alrek\AppData\Roaming\npm-cache\node-md2html\0.0.1\package\package.json written
+18 silly publish { name: 'node-md2html',
+18 silly publish   version: '0.0.1',
+18 silly publish   description: 'A markdown parser written in JavaScript, following Github\'s syntax',
+18 silly publish   main: 'src/md2html.js',
+18 silly publish   scripts:
+18 silly publish    { test: 'echo "Error: no test specified" && exit 1',
+18 silly publish      build: 'node script/build' },
+18 silly publish   author: { name: 'Thomas Alrek', email: 'thomas@alrek.no' },
+18 silly publish   license: 'GPL-2.0',
+18 silly publish   dependencies:
+18 silly publish    { 'github-markdown-css': '^2.4.0',
+18 silly publish      browserify: '^13.0.1',
+18 silly publish      'uglify-js': '^2.6.2' },
+18 silly publish   readme: 'md2html\r\n=======\r\n\r\nA simple and minimal markdown parser written in JavaScript.\r\n\r\nTest data below.\r\n\r\n\r\n# H1\r\n## H2\r\n### H3\r\n#### H4\r\n##### H5\r\n###### H6\r\n\r\nAlternatively, for H1 and H2, an underline-ish style:\r\n\r\nAlt-H1\r\n======\r\n\r\nAlt-H2\r\n------\r\n\r\nEmphasis, aka italics, with *asterisks* or _underscores_.\r\n\r\nStrong emphasis, aka bold, with **asterisks** or __underscores__.\r\n\r\nCombined emphasis with **asterisks and _underscores_**.\r\n\r\nStrikethrough uses two tildes. ~~Scratch this.~~\r\n\r\n[I\'m an inline-style link](https://www.google.com)\r\n\r\n[I\'m an inline-style link with title](https://www.google.com "Google\'s Homepage")\r\n\r\n[I\'m a reference-style link][Arbitrary case-insensitive reference text]\r\n\r\n[I\'m a relative reference to a repository file](../blob/master/LICENSE)\r\n\r\n[You can use numbers for reference-style link definitions][1]\r\n\r\nOr leave it empty and use the [link text itself].\r\n\r\nURLs and URLs in angle brackets will automatically get turned into links. \r\nhttp://www.example.com or <http://www.example.com> and sometimes \r\nexample.com (but not on Github, for example).\r\n\r\nSome text to show that the reference links can follow later.\r\n\r\n[arbitrary case-insensitive reference text]: https://www.mozilla.org\r\n[1]: http://slashdot.org\r\n[link text itself]: http://www.reddit.com\r\n\r\nAnd here\'s some code! :+1:\r\n\r\n```javascript\r\n$(function(){\r\n    $(\'div\').html(\'I am a div.\');\r\n});\r\n```\r\n\r\n**Lists**\r\n* item 1\r\n* item 2\r\n* item 3',
+18 silly publish   readmeFilename: 'README.md',
+18 silly publish   gitHead: '3b602db7dc4a16fca38b277d823bca0ce65c2ffa',
+18 silly publish   _id: 'node-md2html@0.0.1',
+18 silly publish   _shasum: '11aaeba704a7696443a408092daf9c9b14b9c5e8',
+18 silly publish   _from: '.' }
+19 verbose getPublishConfig undefined
+20 silly mapToRegistry name node-md2html
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/node-md2html
+24 verbose publish registryBase https://registry.npmjs.org/
+25 silly publish uploading C:\Users\Thomas Alrek\AppData\Roaming\npm-cache\node-md2html\0.0.1\package.tgz
+26 verbose request uri https://registry.npmjs.org/node-md2html
+27 verbose request sending authorization for write operation
+28 info attempt registry request try #1 at 11:46:51
+29 verbose request using bearer token for auth
+30 verbose request id 7fdc381dbda5c5bd
+31 http request PUT https://registry.npmjs.org/node-md2html
+32 http 403 https://registry.npmjs.org/node-md2html
+33 verbose headers { 'content-type': 'application/json',
+33 verbose headers   'cache-control': 'max-age=300',
+33 verbose headers   'content-length': '106',
+33 verbose headers   'accept-ranges': 'bytes',
+33 verbose headers   date: 'Wed, 10 Aug 2016 09:46:53 GMT',
+33 verbose headers   via: '1.1 varnish',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'x-served-by': 'cache-fra1240-FRA',
+33 verbose headers   'x-cache': 'MISS',
+33 verbose headers   'x-cache-hits': '0',
+33 verbose headers   'x-timer': 'S1470822412.372033,VS0,VE661',
+33 verbose headers   vary: 'Accept-Encoding' }
+34 verbose request invalidating C:\Users\Thomas Alrek\AppData\Roaming\npm-cache\registry.npmjs.org\node-md2html on PUT
+35 error publish Failed PUT 403
+36 verbose stack Error: you do not have permission to publish "node-md2html". Are you logged in as the correct user? : node-md2html
+36 verbose stack     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+36 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:252:14)
+36 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
+36 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:198:22)
+36 verbose stack     at emitTwo (events.js:87:13)
+36 verbose stack     at Request.emit (events.js:172:7)
+36 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1063:14)
+36 verbose stack     at emitOne (events.js:82:20)
+36 verbose stack     at Request.emit (events.js:169:7)
+36 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1009:12)
+37 verbose statusCode 403
+38 verbose pkgid node-md2html
+39 verbose cwd C:\Users\Thomas Alrek\Desktop\md_tmp
+40 error Windows_NT 10.0.14393
+41 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+42 error node v5.0.0
+43 error npm  v3.3.6
+44 error code E403
+45 error you do not have permission to publish "node-md2html". Are you logged in as the correct user? : node-md2html
+46 error If you need help, you may report this error at:
+46 error     <https://github.com/npm/npm/issues>
+47 verbose exit [ 1, true ]

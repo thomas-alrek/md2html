@@ -19,6 +19,7 @@ function md2html(md){
     var a_pattern3 = /\[(.+)\]/gim; // <a>
     //var a_pattern4 = /\<(.+)\>/gim;
     var source_pattern1 = /\`{3}(\S+)([\s\S]*)\`{3}/gim;
+    var source_pattern2 = /((^    *(.)+)+)/gim;
     
     /* links */
     /*md = md.replace(a_pattern4, function(match, url){
@@ -77,6 +78,9 @@ function md2html(md){
     /* source */
     md = md.replace(source_pattern1, function(match, lang, src){
         return '<pre title="' + lang + '">' + src + '</pre>';
+    });
+    md = md.replace(source_pattern2, function(match, src){
+        return '<pre>' + src + '</pre>';
     });
     
     md = md.replace(header_fix, function(match, header){

@@ -1,81 +1,56 @@
 <html>
-<body>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="node_modules/github-markdown-css/github-markdown.css">
-<div id="wrapper"><textarea id="source">md2html
-=======
+    <head>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="node_modules/github-markdown-css/github-markdown.css">
+    </head>
+    <body>
+        <h1 id="header">md2html</h1>
+        <div class="editor-toolbar">
+            <a title="Bold (Ctrl-B)" tabindex="-1" class="fa fa-bold"></a>
+            <a title="Italic (Ctrl-I)" tabindex="-1" class="fa fa-italic"></a>
+            <a title="Heading (Ctrl-H)" tabindex="-1" class="fa fa-header active"></a>
+            <i class="separator">|</i>
+            <a title="Quote (Ctrl-')" tabindex="-1" class="fa fa-quote-left"></a>
+            <a title="Generic List (Ctrl-L)" tabindex="-1" class="fa fa-list-ul"></a>
+            <a title="Numbered List (Ctrl-Alt-L)" tabindex="-1" class="fa fa-list-ol"></a>
+            <i class="separator">|</i>
+            <a title="Create Link (Ctrl-K)" tabindex="-1" class="fa fa-link"></a>
+            <a title="Insert Image (Ctrl-Alt-I)" tabindex="-1" class="fa fa-picture-o"></a>
+            <i class="separator">|</i>
+            <a title="Toggle Preview (Ctrl-P)" tabindex="-1" class="fa fa-eye no-disable"></a>
+            <a title="Toggle Side by Side (F9)" tabindex="-1" class="fa fa-columns no-disable no-mobile"></a>
+            <a title="Toggle Fullscreen (F11)" tabindex="-1" class="fa fa-arrows-alt no-disable no-mobile"></a>
+            <i class="separator">|</i>
+            <a title="Markdown Guide" tabindex="-1" class="fa fa-question-circle" href="https://simplemde.com/markdown-guide" target="_blank"></a>
+        </div>
+        <div id="wrapper">
+            <textarea id="source" disabled></textarea><div id="output" class="markdown-body"></div>
+        </div>
+        
+        <script src="src/md2html.js"></script>
+        <script>
+            var source = document.getElementById("source");
+            var output = document.getElementById("output");
 
-A simple and minimal markdown parser written in JavaScript.
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://raw.githubusercontent.com/thomas-alrek/md2html/master/README.md');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    response = xhr.responseText;
+                    source.disabled = false;
+                    source.value = response;
+                    output.innerHTML = md2html(response);
+                }else {
+                    alert('Request failed.  Returned status of ' + xhr.status);
+                }
+            };
+            xhr.send();
 
-Test data below.
-
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
-
-Alternatively, for H1 and H2, an underline-ish style:
-
-Alt-H1
-======
-
-Alt-H2
-------
-
-Emphasis, aka italics, with *asterisks* or _underscores_.
-
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
-
-Combined emphasis with **asterisks and _underscores_**.
-
-Strikethrough uses two tildes. ~~Scratch this.~~
-
-[I'm an inline-style link](https://www.google.com)
-
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
-
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
-
-[You can use numbers for reference-style link definitions][1]
-
-Or leave it empty and use the [link text itself].
-
-URLs and URLs in angle brackets will automatically get turned into links. 
-http://www.example.com or <http://www.example.com> and sometimes 
-example.com (but not on Github, for example).
-
-Some text to show that the reference links can follow later.
-
-[arbitrary case-insensitive reference text]: https://www.mozilla.org
-[1]: http://slashdot.org
-[link text itself]: http://www.reddit.com
-
-And here's some code! :+1:
-
-```javascript
-$(function(){
-    $('div').html('I am a div.');
-});
-```
-
-**Lists**
-* item 1
-* item 2
-* item 3</textarea><div id="output" class="markdown-body"></div></div>
-<script src="src/md2html.js"></script>
-<script>
-    var source = document.getElementById("source");
-    var output = document.getElementById("output");
-    console.log(source);
-    source.addEventListener("keyup", function(){
-       output.innerHTML = md2html(source.value); 
-    }), false;
-    output.innerHTML = md2html(source.value);
-</script>
-</body>
+            source.addEventListener("keyup", function(){
+            output.innerHTML = md2html(source.value); 
+            }), false;
+        </script>
+    </body>
 </html>

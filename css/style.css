@@ -1,7 +1,9 @@
 #wrapper{
-    width: 100%;
-    height: 100%;
+    width: 75%;
+    height: 75%;
     overflow: hidden;
+    margin: 0 auto;
+    border: 1px solid #000;
 }
 
 #source{
@@ -9,6 +11,8 @@
     height: 100%;
     overflow: scroll;
     display: inline-block;
+    font-family: "Lucida Console", "Monaco", "monospace";
+    resize: none;
 }
 
 #output{
@@ -16,6 +20,7 @@
     height: 100%;
     overflow: scroll;
     display: inline-block;
+    border-left: 1px solid #000;
 }
 
 b{
@@ -32,4 +37,32 @@ i{
     max-width: 980px;
     margin: 0 auto;
     padding: 45px;
+}
+
+#header{
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.editor-toolbar{
+    width: 75%;
+    margin: 0 auto;
+}
+
+.editor-toolbar a{
+    width: 16px;
+    height: 16px;
+    padding: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.editor-toolbar a:hover{
+    background: #000;
+    color: #fff;
 }
